@@ -1,4 +1,5 @@
 import json
+import os
 
 
 class URL:
@@ -13,7 +14,12 @@ class Creds:
 
 class DataJson:
     # Open and read the JSON file
-    with open('C:/Users/Change Me/PycharmProjects/NOCOMMERCE_V4/TestData.json', 'r') as file:
+    file_path = os.path.join(os.path.dirname(__file__), 'C:/Users/Change Me/PycharmProjects/NOCOMMERCE_V4/TestData.json')
+
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Test data file not found: {file_path}")
+
+    with open(file_path, 'r') as file:
         data = json.load(file)
 
 

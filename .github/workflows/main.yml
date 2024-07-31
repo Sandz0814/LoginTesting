@@ -24,7 +24,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install selenium pytest
+        # Install other dependencies as needed
+
+    - name: Set environment variable
+      run: echo "TEST_DATA_FILE_PATH=path/to/TestData.json" >> $GITHUB_ENV
 
     - name: Run Selenium tests with pytest
       run: |
-        pytest test/
+        pytest tests/
