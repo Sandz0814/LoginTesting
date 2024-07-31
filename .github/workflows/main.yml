@@ -29,5 +29,4 @@ jobs:
 
     - name: Run Selenium tests with pytest
       run: |
-        cd TestCases
-        pytest .
+        pytest TestCases/
