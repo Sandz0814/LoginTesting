@@ -14,7 +14,7 @@ class Creds:
 
 class DataJson:
     # Open and read the JSON file
-    file_path = os.path.join(os.path.dirname(__file__), 'C:/Users/Change Me/PycharmProjects/NOCOMMERCE_V4/TestData.json')
+    file_path = os.path.join(os.path.dirname(__file__), '/TestData/TestData.json')
 
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Test data file not found: {file_path}")
@@ -24,7 +24,7 @@ class DataJson:
 
 
 class CustomerData:
-    with open('C:/Users/Change Me/PycharmProjects/NOCOMMERCE_V4/TestDataCustomer.json', 'r') as file:
+    with open('/TestData/TestDataCustomer.json', 'r') as file:
         data = json.load(file)
 
         print(data['email'])
