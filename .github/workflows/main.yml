@@ -27,6 +27,11 @@ jobs:
         pip install selenium
         pip install pytest
 
+    - name: List files for debugging
+      run: |
+        dir
+        dir TestData
+
     - name: Run Selenium tests with pytest
       run: |
         pytest TestCases/
