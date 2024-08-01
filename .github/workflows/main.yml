@@ -2,7 +2,7 @@ name: End-to-end tests
 on: push
 jobs:
   selenium-run:
-    runs-on: ubuntu-22.04
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,6 +17,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install selenium
           pip install pytest
+          pip install json
+          pip install request
 
       - name: Run Selenium tests with pytest
         run: |
